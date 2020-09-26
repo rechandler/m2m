@@ -18,7 +18,7 @@ const Index = () => {
   if (!user) {
     return (
       <>
-        <p>Hi there!</p>
+        <p>Hi there! SUP bruh</p>
         <p>
           You are not signed in.{' '}
           <Link href={'/auth'}>
