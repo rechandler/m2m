@@ -1,20 +1,19 @@
 {
-  "name": "with-firebase-authentication",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "api",
+      "web"
+    ]
   },
-  "dependencies": {
-    "firebase": "^7.15.5",
-    "firebase-admin": "^8.12.1",
-    "js-cookie": "2.2.1",
-    "next": "latest",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-firebaseui": "4.1.0",
-    "swr": "0.2.3"
+  "devDependencies": {
+    "@redwoodjs/core": "^0.20.0"
   },
-  "license": "MIT"
+  "eslintConfig": {
+    "extends": "@redwoodjs/eslint-config"
+  },
+  "engines": {
+    "node": ">=12",
+    "yarn": ">=1.15"
+  }
 }
