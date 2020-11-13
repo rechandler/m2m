@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { useAuth } from '@redwoodjs/auth'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AppBar = () => {
+  const { logIn, logOut, isAuthenticated, currentUser } = useAuth()
   const classes = useStyles();
 
   return (
@@ -30,7 +32,10 @@ const AppBar = () => {
         <Typography variant="h6" className={classes.title}>
           News
         </Typography>
-        <Button color="inherit">Login</Button>
+          <button onClick={isAuthenticated ? logOut : logIn}>
+            {isAuthenticated ? 'Log Out' : 'Log In'}
+          </button>
+          {isAuthenticated && <p>{currentUser.email}</p>}
       </Toolbar>
     </MaterialAppBar>
   )
