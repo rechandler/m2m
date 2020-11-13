@@ -1,0 +1,48 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateModel",
+      "model": "RW_DataMigration"
+    },
+    {
+      "tag": "CreateField",
+      "model": "RW_DataMigration",
+      "field": "version",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "RW_DataMigration",
+          "field": "version"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "RW_DataMigration",
+      "field": "name",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "RW_DataMigration",
+      "field": "startedAt",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "RW_DataMigration",
+      "field": "finishedAt",
+      "type": "DateTime",
+      "arity": "Required"
+    }
+  ]
+}
